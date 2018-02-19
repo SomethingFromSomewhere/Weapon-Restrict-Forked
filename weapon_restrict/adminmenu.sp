@@ -254,7 +254,7 @@ void HandleMenuGroupRestriction(int iClient, int group, int amount, int team)
 {
 	if(group == WeaponTypeNone)
 	{
-		for(int i = 1; i < WEAPON_ID_MAX; ++i)
+		for(int i = 1; i < MAX_WEAPONS; ++i)
 		{
 			Function_SetRestriction(i, CS_TEAM_CT, amount, true);
 			Function_SetRestriction(i, CS_TEAM_T, amount, true);
@@ -316,13 +316,13 @@ void AddGroupsToMenu(Menu hMenu)
 
 void AddWeaponsToMenu(Menu hMenu)
 {
-	char weaponArray[WEAPON_ID_MAX][WEAPONARRAYSIZE], weapon[WEAPONARRAYSIZE];
+	char weaponArray[MAX_WEAPONS][WEAPONARRAYSIZE], weapon[WEAPONARRAYSIZE];
 	int size, i;
 	
-	for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i != WEAPON_SHIELD)
+	for(i = 1; i < MAX_WEAPONS; ++i)	if(i != WEAPON_SHIELD)
 	{
-		if(g_iGame == GAME_CSGO && (i == WEAPON_GALIL || i == WEAPON_M3 || i == WEAPON_MP5NAVY || i == WEAPON_P228 || i == WEAPON_SCAR17 || i == WEAPON_SCOUT || i == WEAPON_SG550 || i == WEAPON_SG552 || i == WEAPON_TMP)) continue;
-		if(g_iGame == GAME_CSS && (i == WEAPON_GALILAR || i == WEAPON_HKP2000 || i == WEAPON_MAG7 || i == WEAPON_MP9 || i == WEAPON_NEGEV || i == WEAPON_NOVA || i == WEAPON_P250 || i == WEAPON_SAWEDOFF || i == WEAPON_SCAR17 || i == WEAPON_SCAR20 || i == WEAPON_DECOY || i == WEAPON_INCGRENADE || i == WEAPON_MOLOTOV || i == WEAPON_KNIFE_GG || i == WEAPON_SSG08 || i == WEAPON_TASER || i == WEAPON_TEC9)) continue;
+		if(g_iGame == GAME_CSGO && (i == WEAPON_GALIL || i == WEAPON_M3 || i == WEAPON_MP5NAVY || i == WEAPON_P228 || i == WEAPON_SCOUT || i == WEAPON_SG550 || i == WEAPON_SG552 || i == WEAPON_TMP)) continue;
+		if(g_iGame == GAME_CSS && (i == WEAPON_GALILAR || i == WEAPON_HKP2000 || i == WEAPON_MAG7 || i == WEAPON_MP9 || i == WEAPON_NEGEV || i == WEAPON_NOVA || i == WEAPON_P250 || i == WEAPON_SAWEDOFF || i == WEAPON_SCAR20 || i == WEAPON_DECOY || i == WEAPON_INCGRENADE || i == WEAPON_MOLOTOV || i == WEAPON_KNIFE_GG || i == WEAPON_SSG08 || i == WEAPON_TASER || i == WEAPON_TEC9)) continue;
 		FormatEx(weaponArray[size], WEAPONARRAYSIZE, "%s", weaponNames[i]);
 		++size;
 	}

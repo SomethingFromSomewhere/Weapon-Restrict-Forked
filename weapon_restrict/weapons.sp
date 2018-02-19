@@ -1,8 +1,8 @@
 void InitWeaponInfoTrie()
 {
 	g_hWeaponInfoTrie = new StringMap();
-	int info[InfoMax], i;
-	for(i = 0; i < WEAPON_ID_MAX; ++i)
+	int info[InfoMax];
+	for(int i; i < MAX_WEAPONS; ++i)
 	{
 		info[InfoID] = i;
 		info[InfoSlot] = weaponSlots[i];
@@ -10,9 +10,9 @@ void InitWeaponInfoTrie()
 		
 		if(i == WEAPON_ELITE && g_iGame == GAME_CSGO)
 		{
-			info[InfoTeam] = BOTHTEAMS;//CSGO elites are for both teams.
+			info[InfoTeam] = BOTH_TEAMS;//CSGO elites are for both teams.
 		}
-		else	info[InfoTeam] = BuyTeams[i];
+		else info[InfoTeam] = BuyTeams[i];
 		
 		g_hWeaponInfoTrie.SetArray(weaponNames[i], info/*[0]*/, InfoMax);
 	}
@@ -21,16 +21,14 @@ void InitWeaponInfoTrie()
 int GetWeaponID(const char[] sWeapon)
 {
 	int info[InfoMax];
-	if(GetWeaponInfo(sWeapon, info))	return info[InfoID];
+	if(GetWeaponInfo(sWeapon, info)) return info[InfoID];
 	return WEAPON_NONE;
 }
 
 int GetWeaponPrice(int client, int id)
 {	
-	if(id > WEAPON_DEFUSER || id <= WEAPON_NONE)
-		return 0;
-	if(id == WEAPON_DEFUSER && g_iGame != GAME_CSGO) //Only assume on CSS
-		return 200;
+	if(id > WEAPON_DEFUSER || id <= WEAPON_NONE) return 0;
+	if(id == WEAPON_DEFUSER && g_iGame != GAME_CSGO) return 200;//Only assume on CSS
 	
 	return CS_GetWeaponPrice(client, view_as<CSWeaponID>(id));
 }

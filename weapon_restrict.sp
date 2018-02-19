@@ -1,8 +1,8 @@
 #include <sdktools_functions>
 #include <sdktools_entinput>
+#include <weapon_restrict>
 #include <sdkhooks>
 #include <cstrike>
-#include <weapon_restrict>
 
 
 #pragma semicolon 1
@@ -13,7 +13,7 @@
 #include <adminmenu>
 
 
-#define ADMINCOMMANDTAG " \x01[\x04SM\x01]\x04"
+public const char ADMINCOMMANDTAG[] = " \x01[\x04SM\x01]\x04";	// Вынести в перевод
 
 #include "weapon_restrict/defines.sp"
 #include "weapon_restrict/weapons.sp"
@@ -27,10 +27,10 @@
 
 public Plugin myinfo = 
 {
-	name = "Weapon Restrict [FORK]",
-	author = "Someone & Dr!fter",
-	version = "3.1.7F",
-	url = "http://hlmod.ru/"
+	name 		= 		"Weapon Restrict [FORK]",
+	author 		= 		"Someone & Dr!fter & T1MOX4",
+	version 	= 		"3.2.1 D",
+	url 		= 		"http://hlmod.ru/"
 };
 
 
@@ -59,6 +59,7 @@ public APLRes AskPluginLoad2(Handle myself, bool bLate, char[] error, int err_ma
 	hCanBuyForward 			=	 	CreateGlobalForward("Restrict_OnCanBuyWeapon", 		ET_Single, 		Param_Cell, 	Param_Cell, 	Param_Cell, 	Param_CellByRef		);
 	hCanPickupForward 		= 		CreateGlobalForward("Restrict_OnCanPickupWeapon", 	ET_Single, 		Param_Cell, 	Param_Cell, 	Param_Cell, 	Param_CellByRef		);
 	CreateNative(										"Restrict_SetImmunity",			Native_SetImmunity																	);
+	CreateNative(										"Restrict_SetStatus",			Native_SetStatus																	);
 	
 	RegPluginLibrary("weapon_restrict");
 	
@@ -80,8 +81,20 @@ public void OnPluginStart()
 	
 	if(LibraryExists("adminmenu"))
 	{
-		TopMenu hTopMenu = GetAdminTopMenu();
-		if(hTopMenu)	OnAdminMenuReady(hTopMenu);
+		TopMenu hTopMenu = 	GetAdminTopMenu();
+		if(hTopMenu)		OnAdminMenuReady(hTopMenu);
     }
-	RequestFrame(Load, true);
+	RequestFrame(Load);
+	
+	RegConsoleCmd("sm_wp", CMD_TEST);
+}
+
+public Action CMD_TEST(int iClient, int iArgs)
+{
+	for(int i = 1; i < MAX_WEAPONS; ++i)	if(i != WeaponTypeShield)
+	{
+		PrintToServer("defaultValuesT  %i", defaultValuesT[i]);
+		PrintToServer("defaultValuesCT %i", defaultValuesCT[i]);
+	}
+	return Plugin_Handled;
 }

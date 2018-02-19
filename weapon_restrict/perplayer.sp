@@ -1,14 +1,14 @@
 void PerPlayerInit()
 {
 	int i, x;
-	for(i = 0; i < WEAPON_ID_MAX; ++i)
+	for(i = 0; i < MAX_WEAPONS; i++)
 	{
 		for(x = 0; x <= MAXPLAYERS; ++x)
 		{
 			perPlayer[i][x] = -2;
 		}
 	}
-	for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i == WEAPON_SHIELD)
+	for(i = 1; i < MAX_WEAPONS; i++)	if(i != WEAPON_SHIELD)
 	{
 		if(i != WEAPON_DEFUSER)
 		{
@@ -118,7 +118,7 @@ void CheckPerPlayer()
 	if(g_bPerPlayerRestrict)
 	{
 		int count = GetPlayerCount();
-		for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i != WEAPON_SHIELD)
+		for(i = 1; i < MAX_WEAPONS; ++i)	if(i != WEAPON_SHIELD)
 		{	
 			if(i != WEAPON_DEFUSER && perPlayer[i][0] != -2 && Function_GetRestrictValue(CS_TEAM_T, i) != perPlayer[i][count] && !Function_IsWeaponInOverride(CS_TEAM_T, i))	Function_SetRestriction(i, CS_TEAM_T, perPlayer[i][count], false);
 			if(i != WEAPON_C4 && perPlayer[i][0] != -2 && Function_GetRestrictValue(CS_TEAM_CT, i) != perPlayer[i][count] && !Function_IsWeaponInOverride(CS_TEAM_CT, i))	Function_SetRestriction(i, CS_TEAM_CT, perPlayer[i][count], false);
@@ -126,10 +126,10 @@ void CheckPerPlayer()
 	}
 	else
 	{
-		for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i != WEAPON_SHIELD)
+		for(i = 1; i < MAX_WEAPONS; ++i)	if(i != WEAPON_SHIELD)
 		{
-			if(i != WEAPON_DEFUSER && Function_GetRestrictValue(CS_TEAM_T, i) != defaultValuesT[i] && !Function_IsWeaponInOverride(CS_TEAM_T, i))	Function_SetRestriction(i, CS_TEAM_T, defaultValuesT[i], false);
-			if(i != WEAPON_C4 && Function_GetRestrictValue(CS_TEAM_CT, i) != defaultValuesCT[i] && !Function_IsWeaponInOverride(CS_TEAM_CT, i))	Function_SetRestriction(i, CS_TEAM_CT, defaultValuesCT[i], false);
+			if(i != WEAPON_DEFUSER 	&& 	Function_GetRestrictValue(CS_TEAM_T, 	i) 	!= defaultValuesT[i] 	&& 	!Function_IsWeaponInOverride(CS_TEAM_T, 	i))	Function_SetRestriction(i, CS_TEAM_T, 	defaultValuesT[i], 	false);
+			if(i != WEAPON_C4 		&& 	Function_GetRestrictValue(CS_TEAM_CT, 	i) 	!= defaultValuesCT[i] 	&& 	!Function_IsWeaponInOverride(CS_TEAM_CT, i))	Function_SetRestriction(i, CS_TEAM_CT, 	defaultValuesCT[i], 	false);
 		}
 	}
 }

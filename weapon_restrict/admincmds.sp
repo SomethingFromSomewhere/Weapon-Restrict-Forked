@@ -18,7 +18,7 @@ bool HandleRestrictionCommand(int iClient, char[] weapon, int team = 0, int amou
 {
 	if(strcmp(weapon, "@all", false) == 0 || strcmp(weapon, "@all", false) == 0)
 	{
-		for(int i = 1; i < WEAPON_ID_MAX; ++i)
+		for(int i = 1; i < MAX_WEAPONS; ++i)
 		{
 			Function_SetRestriction(i, CS_TEAM_CT, amount, true);
 			Function_SetRestriction(i, CS_TEAM_T, amount, true);

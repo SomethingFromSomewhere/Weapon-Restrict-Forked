@@ -10,7 +10,7 @@ void CheckWeaponArrays()
 	for (int i = MaxClients; i <= GetMaxEntities(); ++i)	if (IsValidEdict(i) && IsValidEntity(i))
 	{
 		GetEdictClassname(i, sName, sizeof(sName));
-		if((strncmp(sName, "weapon_", 7, false) == 0 || strncmp(sName, "item_", 5, false) == 0))
+		if((strncmp(sName, "WEAPON_", 7, false) == 0 || strncmp(sName, "item_", 5, false) == 0))
 		{
 			int iID = Function_GetWeaponIDExtended(sName);
 			if(iID != WEAPON_NONE && hWeaponEntityArray.FindValue(i) == -1)
@@ -26,7 +26,7 @@ public void OnEntityCreated(int iEnt, const char[] classname)
 {
 	if(!hWeaponsIDArray || !hWeaponEntityArray)	return;
 
-	if(StrContains(classname, "weapon_", false) != -1 || StrContains(classname, "item_", false) != -1)
+	if(StrContains(classname, "WEAPON_", false) != -1 || StrContains(classname, "item_", false) != -1)
 	{
 		int iID = GetWeaponID(classname);
 		
@@ -59,7 +59,7 @@ int GetWeaponIDFromEnt(int iEnt)
 	
 	char sClassname[WEAPONARRAYSIZE];
 	GetEdictClassname(iEnt, sClassname, sizeof(sClassname));
-	if(StrContains(sClassname, "weapon_", false) != -1 || StrContains(sClassname, "item_", false) != -1)
+	if(StrContains(sClassname, "WEAPON_", false) != -1 || StrContains(sClassname, "item_", false) != -1)
 	{
 		int iID = GetWeaponID(sClassname);
 		if(iID != WEAPON_NONE)
