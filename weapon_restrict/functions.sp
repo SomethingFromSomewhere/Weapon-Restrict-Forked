@@ -9,12 +9,16 @@ int GetTypeGroup(const char[] sWeapon)
 
 void CheckConfig()
 {
-	char file[PLATFORM_MAX_PATH], map[64], pref[6];
-	GetCurrentMapEx(map, sizeof(map));
-	BuildPath(Path_SM, file, sizeof(file), "configs/restrict/%s.cfg", map);
+	char file[PLATFORM_MAX_PATH], szMap[32], pref[6];
+	
+	GetCurrentMap(szMap, sizeof(szMap));
+	
+	if (strncmp(szMap, "workshop", 8) == 0) 	 strcopy(szMap, sizeof(szMap), szMap[8 + StrContains(szMap[9], szMap[8] == '/' ? "/" : "\\")]);
+	BuildPath(Path_SM, file, sizeof(file), "configs/restrict/%s.cfg", szMap);
+	
 	if(!RunFile(file))
 	{
-		SplitString(map, "_", pref, sizeof(pref));
+		SplitString(szMap, "_", pref, sizeof(pref));
 		BuildPath(Path_SM, file, sizeof(file), "configs/restrict/%s_.cfg", pref);
 		RunFile(file);
 	}
@@ -25,7 +29,7 @@ bool RunFile(const char[] sFile)
 	if(!FileExists(sFile))	return false;
 
 	File FileHandle = OpenFile(sFile, "r");
-	char Command[50];
+	char Command[64];
 	while(!IsEndOfFile(FileHandle))
 	{
 		ReadFileLine(FileHandle, Command, sizeof(Command));
@@ -34,22 +38,6 @@ bool RunFile(const char[] sFile)
 	}
 	delete FileHandle;
 	return true;
-}
-
-int GetCurrentMapEx(char[] sMap, int iSize)
-{
-	GetCurrentMap(sMap, iSize);
-	
-	int iIndex = -1, i, iLen = strlen(sMap);
-	for(i = 0; i < iLen; ++i)
-	{
-		if(StrContains(sMap[i], "/") != -1 || StrContains(sMap[i], "\\") != -1)
-		{
-			if(i != strlen(sMap) - 1)	iIndex = i;
-		}
-		else	break;
-	}
-	FormatEx(sMap, iSize, "%s", sMap[iIndex+1]);
 }
 
 bool IsGoingToPickup(int iClient, int iID)
@@ -105,7 +93,6 @@ bool IsValidWeaponID(int iID)
 	return true;
 }
 
-
 bool IsValidWeaponSlot(int slot)
 {
 	if(slot < SlotPrimmary || slot > SlotC4)	return false;
@@ -135,13 +122,10 @@ void Function_RemoveRandom(int count, int iTeam, int iID)
 	
 	for(i = 1; i <= MaxClients; ++i)	if(IsClientInGame(i) && !Function_GetImmunity(i) && GetClientTeam(i) == iTeam)
 	{
-		if(slot == SlotGrenade || iID == WEAPON_TASER || iID == WEAPON_KNIFE || iID == WEAPON_KNIFE_GG)// CSGO has 2 "knives" slots
+		if(slot == SlotGrenade || iID == WEAPON_TASER || iID == WEAPON_KNIFE || iID == WEAPON_KNIFE_GG)
 		{
-			if(iID == WEAPON_TASER || iID == WEAPON_KNIFE || iID == WEAPON_KNIFE_GG)//CSGO 
-			{
-				gcount = 1;
-			}
-			else	gcount = Function_GetGrenadeCount(i, iID);
+			if(iID == WEAPON_TASER || iID == WEAPON_KNIFE || iID == WEAPON_KNIFE_GG)		gcount = 1;
+			else																		gcount = Function_GetGrenadeCount(i, iID);
 			
 			for(x = 0; x <= g_iMyWeaponsMax; x++)
 			{
@@ -361,7 +345,7 @@ bool Function_HasSpecialItem(int iClient, int iID)
 
 bool Function_IsWeaponInOverride(int iTeam, int iID)
 {
-	switch(iTeam)
+	switch(iTeam)	// Заменить на if/else после проверки
 	{
 		case CS_TEAM_CT: if(g_bOverideCT[iID])
 		{
@@ -435,34 +419,6 @@ bool Function_SetRestriction(int iID, int iTeam, int iAmount, bool bOverride)
 	return true;
 }
 
-bool Function_CanPickupWeapon(int iClient, int iTeam, int iID)
-{
-	int restrictval = Function_GetRestrictValue(iTeam, iID);
-	bool bResult;
-	Action iAction = Plugin_Continue;
-	
-
-	Call_StartForward(hCanPickupForward);
-	Call_PushCell(iClient);
-	Call_PushCell(iTeam);
-	Call_PushCell(iID);
-	Call_PushCellRef(bResult);
-	Call_Finish(iAction);
-
-	
-	switch(iAction)
-	{
-		case Plugin_Continue:	if(restrictval == -1 || Function_GetImmunity(iClient) || (Function_GetTeamWeaponCount(iTeam, iID) < restrictval) || g_bAllow)
-		{
-			return true;
-		}
-		case Plugin_Changed:	return bResult;
-		case Plugin_Handled:	return false;
-		case Plugin_Stop:		return false;
-	}
-	return false;
-}
-
 bool Function_SetGroupRestriction(int iGroup, int iTeam, int iAmount)
 {
 	for(int i = 1; i < WEAPON_ID_MAX; ++i)	if(iGroup == weaponGroups[i])
@@ -498,16 +454,55 @@ void Function_CheckPlayerWeapons()
 
 int Function_CanBuyWeapon(int iClient, int iTeam, int iID)
 {
-	int iMaxAmount = Function_GetRestrictValue(iTeam, iID), iResult;
-	if(iMaxAmount == -1 || Function_GetImmunity(iClient) || (Function_GetTeamWeaponCount(iTeam, iID) < iMaxAmount))	iResult = CanBuy_Allow;
+	int iMaxAmount = Function_GetRestrictValue(iTeam, iID);
+	bool bResult = true;
+	Action iAction = Plugin_Continue;
 
 	Call_StartForward(hCanBuyForward);
 	Call_PushCell(iClient);
 	Call_PushCell(iTeam);
 	Call_PushCell(iID);
-	Call_Finish(iResult);
+	Call_PushCellRef(bResult);
+	Call_Finish(iAction);
 
-	return iResult;
+
+	switch(iAction)
+	{
+		case Plugin_Continue:	if(iMaxAmount == -1 || Function_GetImmunity(iClient) || Function_GetTeamWeaponCount(iTeam, iID) < iMaxAmount || g_bAllow)
+		{
+			return true;
+		}
+		case Plugin_Changed:	return bResult;
+		default:			return false;
+	}
+	return false;
+}
+
+bool Function_CanPickupWeapon(int iClient, int iTeam, int iID)
+{
+	int iMaxAmount = Function_GetRestrictValue(iTeam, iID);
+	bool bResult = true;
+	Action iAction = Plugin_Continue;
+	
+
+	Call_StartForward(hCanPickupForward);
+	Call_PushCell(iClient);
+	Call_PushCell(iTeam);
+	Call_PushCell(iID);
+	Call_PushCellRef(bResult);
+	Call_Finish(iAction);
+
+	
+	switch(iAction)
+	{
+		case Plugin_Continue:	if(iMaxAmount == -1 || Function_GetImmunity(iClient) || Function_GetTeamWeaponCount(iTeam, iID) < iMaxAmount || g_bAllow)
+		{
+			return true;
+		}
+		case Plugin_Changed:	return bResult;
+		default:				return false;
+	}
+	return false;
 }
 
 public int Native_SetImmunity(Handle hPlugin, int numParams)
@@ -515,4 +510,9 @@ public int Native_SetImmunity(Handle hPlugin, int numParams)
 	int iClient = GetNativeCell(1);
 	if(IsClientConnected(iClient) && !IsFakeClient(iClient))	g_bImmunity[iClient] = view_as<bool>(GetNativeCell(2));
 	else ThrowNativeError(SP_ERROR_NATIVE, "[Weapon Restrict] [ERROR] [SetImmunity] Client '%d' not connected or bot.", iClient);
+}
+
+public int Native_SetStatus(Handle hPlugin, int numParams)
+{
+	g_bStatus = GetNativeCell(1);
 }

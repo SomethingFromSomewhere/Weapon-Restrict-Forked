@@ -195,7 +195,9 @@ bool g_bSpamProtectPrint[MAXPLAYERS+1],		g_bPerPlayerSpecs, 						g_bPerPlayerBo
 	
 	bIsFirstKey = true,						g_bLateLoaded, 							g_bImmunity[MAXPLAYERS+1],
 	
-	g_bOverideT[WEAPON_ID_MAX], 				g_bOverideCT[WEAPON_ID_MAX];
+	g_bOverideT[WEAPON_ID_MAX], 				g_bOverideCT[WEAPON_ID_MAX],				g_bWeaponKill,
+	
+	g_bStatus = true;
 	
 
 int 	g_iMenuAmount[MAXPLAYERS+1], 			g_iWeaponSlected[MAXPLAYERS+1], 			g_iGroupSelected[MAXPLAYERS+1], 
@@ -208,7 +210,7 @@ int 	g_iMenuAmount[MAXPLAYERS+1], 			g_iWeaponSlected[MAXPLAYERS+1], 			g_iGroup
 	
 	defaultValuesT[WEAPON_ID_MAX], 			currentID = WEAPON_NONE, 				iLastVal = -1, 
 	
-	iLastIndex = 0, 						perPlayer[WEAPON_ID_MAX][MAXPLAYERS+1],	g_iMyWeaponsMax = 31, 
+	iLastIndex = 0, 							perPlayer[WEAPON_ID_MAX][MAXPLAYERS+1],	g_iMyWeaponsMax = 31, 
 	
 	HEGRENADE_AMMO = 11, 					FLASH_AMMO = 12, 						SMOKE_AMMO = 13, 
 	

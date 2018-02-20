@@ -1,17 +1,13 @@
-#if defined _restrict_included
+#if defined _weapon_restrict_included
   #endinput
 #endif
-#define _restrict_included
-
-const int	CanBuy_Block = 0,
-			CanBuy_BlockDontDisplay = 1,
-			CanBuy_Allow = 2; 
+#define _weapon_restrict_included
 
 #define WEAPONARRAYSIZE 64
 
 
 /**
- * Установка имммунитета от запрета оружия.
+ * Установка иммунитета от запрета оружия.
  * 
  * @param	iClient		Индекс игрока.
  * @param	bImmunity	Значение иммунитета (true/false)
@@ -21,18 +17,28 @@ const int	CanBuy_Block = 0,
 native void Restrict_SetImmunity(int iClient, bImmunity = true);
 
 /**
- * Вызывается при попытка купить оружие.
+ * Включение/Отключение запрета оружия. (Сбрасывается после смены карты)
+ * 
+ * @param	bStatus		Статус запрета (true/false)
+ * 
+ * @noreturn
+ */
+native void Restrict_SetStatus(bStatus = false);
+
+/**
+ * Вызывается при попытке купить оружие.
  * 
  * @param	iClient		Индекс игрока.
  * @param	iTeam		Индекс команды.
  * @param	iID			ID оружия.
+ * @param 	&bAllow		true - разрешить покупку, false - запретить. (Plugin_Changed)
  * 
- * Возврат CanBuy_Block - запретит покупку | CanBuy_BlockDontDisplay - запретит покупку, но не сообщит об этом | CanBuy_Allow - разрешит покупку
+ * Возврат Plugin_Continue разрешит покупку, Plugin_Changed для использования &bAllow, Plugin_Stop/Plugin_Handled для запрета покупки.
  */
-forward int Restrict_OnCanBuyWeapon(int iClient, int iTeam, int iID);		// Будет изменен в будущем.
+forward Action Restrict_OnCanBuyWeapon(int iClient, int iTeam, int iID, bool &bAllow);
 
 /**
- * Вызывается при попытка подобрать оружие.
+ * Вызывается при попытке подобрать оружие.
  * 
  * @param	iClient		Индекс игрока.
  * @param	iTeam		Индекс команды.
@@ -43,7 +49,7 @@ forward int Restrict_OnCanBuyWeapon(int iClient, int iTeam, int iID);		// Буд
  */
 forward Action Restrict_OnCanPickupWeapon(int iClient, int iTeam, int iID, bool &bAllow);
 
-public SharedPlugin:__pl_restrict = 
+public SharedPlugin:__pl_weapon_restrict = 
 {
 	name = "weapon_restrict",
 	file = "weapon_restrict.smx",
@@ -53,3 +59,11 @@ public SharedPlugin:__pl_restrict =
 	required = 0,
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public void __pl_weapon_restrict_SetNTVOptional()
+{
+	MarkNativeAsOptional("Restrict_SetImmunity");
+	MarkNativeAsOptional("Restrict_SetStatus");
+}
+#endif

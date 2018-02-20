@@ -17,17 +17,18 @@ public void OnClientDisconnect(int iClient)
 
 public Action OnWeaponCanUse(int iClient, int iWeapon)
 {
+	if(!g_bStatus)	return Plugin_Continue;
 	static int iTeam, iID;
 	iTeam = GetClientTeam(iClient), iID = GetWeaponIDFromEnt(iWeapon);
 	
 	if(iID == WEAPON_NONE || Function_CanPickupWeapon(iClient, iTeam, iID) || !IsGoingToPickup(iClient, iID))	return Plugin_Continue;
 	
-	if(iID == WEAPON_C4 || iID == WEAPON_KNIFE)	AcceptEntityInput(iWeapon, "Kill");
+	if(iID == WEAPON_C4 || iID == WEAPON_KNIFE || g_bWeaponKill)	AcceptEntityInput(iWeapon, "Kill");
 
 	if(g_fDelay > 0.0 && !g_bSpamProtectPrint[iClient])
 	{
-		if(iTeam == CS_TEAM_CT)	PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedPickupCT", Function_GetRestrictValue(iTeam, iID));
-		else PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedPickupT", Function_GetRestrictValue(iTeam, iID));
+		if(iTeam == CS_TEAM_CT)	PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedPickupCT", 	Function_GetRestrictValue(iTeam, iID));
+		else 					PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedPickupT", 	Function_GetRestrictValue(iTeam, iID));
 		g_bSpamProtectPrint[iClient] = true;
 		CreateTimer(g_fDelay, ResetPrintDelay, iClient);
 	}
@@ -42,6 +43,7 @@ public Action ResetPrintDelay(Handle hTimer, int iClient)
 
 public void OnMapStart()
 {
+	g_bStatus = true;
 	ClearOverride();
 	CheckWeaponArrays();
 	
@@ -53,6 +55,7 @@ public void OnMapStart()
 		}
 	}
 }
+
 public void OnConfigsExecuted()
 {
 	CheckConfig();
@@ -60,25 +63,10 @@ public void OnConfigsExecuted()
 	RequestFrame(Load, false);
 }
 
-public void Load(bool bConfig)
+public void Load(bool bNothing)
 {
 	PerPlayerInit();
 	CheckPerPlayer();
-	
-	if(bConfig)
-	{
-		char file[PLATFORM_MAX_PATH] = "cfg/sourcemod/weapon_restrict.cfg";
-		if(FileExists(file))
-		{
-			ServerCommand("exec sourcemod/weapon_restrict.cfg");
-		}
-	}
-	else
-	{
-		PerPlayerInit();
-		CheckPerPlayer();
-	}
-	
 	g_bLateLoaded = false;
 }
 
@@ -89,45 +77,18 @@ public void EventRoundStart(Event hEvent, const char[] name, bool bDontBroadcast
 
 public Action CS_OnBuyCommand(int iClient, const char[] weapon)
 {
-	//if(!IsClientInGame(iClient))
-	//	return Plugin_Continue;
+	if(!g_bStatus)	return Plugin_Continue;
+	static int iTeam, iID;
+	iTeam = GetClientTeam(iClient), iID = Function_GetWeaponIDExtended(weapon);
 	
-	int iTeam = GetClientTeam(iClient);
+	if(iID == WEAPON_NONE || iID == WEAPON_C4 || iID == WEAPON_SHIELD)		return Plugin_Continue;
+	if(BuyTeams[iID] != 0 && iTeam != BuyTeams[iID])						return Plugin_Continue;
 	
-	//if(iTeam <= CS_TEAM_SPECTATOR)
-	//	return Plugin_Continue;
-	
-	int iID = Function_GetWeaponIDExtended(weapon);
-	
-	if(iID == WEAPON_NONE || iID == WEAPON_C4 || iID == WEAPON_SHIELD)
-		return Plugin_Continue;
-	
-	int iBuyTeam = BuyTeams[iID];
-	
-	if(iBuyTeam != 0 && iTeam != iBuyTeam)
-		return Plugin_Continue;
-	
-	switch(Function_CanBuyWeapon(iClient, iTeam, iID))
+	if(!Function_CanBuyWeapon(iClient, iTeam, iID))
 	{
-		case CanBuy_Block:
-		{
-			switch(iTeam)
-			{
-				case CS_TEAM_CT:
-				{
-					PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedBuyCT", Function_GetRestrictValue(iTeam, iID));
-				}
-				case CS_TEAM_T:
-				{
-					PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedBuyT", Function_GetRestrictValue(iTeam, iID));
-				}
-			}
-			return Plugin_Handled;
-		}
-		case CanBuy_BlockDontDisplay:
-		{
-			return Plugin_Handled;
-		}
+		if(iTeam == CS_TEAM_CT)	PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedBuyCT", Function_GetRestrictValue(iTeam, iID));
+		else					PrintToChat(iClient, "%s %t %t", ADMINCOMMANDTAG, weaponNames[iID], "IsRestrictedBuyT", Function_GetRestrictValue(iTeam, iID));
+		return Plugin_Handled;
 	}
 	return Plugin_Continue;
 }

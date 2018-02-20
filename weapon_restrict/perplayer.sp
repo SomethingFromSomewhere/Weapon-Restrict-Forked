@@ -8,7 +8,7 @@ void PerPlayerInit()
 			perPlayer[i][x] = -2;
 		}
 	}
-	for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i == WEAPON_SHIELD)
+	for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i != WEAPON_SHIELD)
 	{
 		if(i != WEAPON_DEFUSER)
 		{
@@ -128,8 +128,8 @@ void CheckPerPlayer()
 	{
 		for(i = 1; i < WEAPON_ID_MAX; ++i)	if(i != WEAPON_SHIELD)
 		{
-			if(i != WEAPON_DEFUSER && Function_GetRestrictValue(CS_TEAM_T, i) != defaultValuesT[i] && !Function_IsWeaponInOverride(CS_TEAM_T, i))	Function_SetRestriction(i, CS_TEAM_T, defaultValuesT[i], false);
-			if(i != WEAPON_C4 && Function_GetRestrictValue(CS_TEAM_CT, i) != defaultValuesCT[i] && !Function_IsWeaponInOverride(CS_TEAM_CT, i))	Function_SetRestriction(i, CS_TEAM_CT, defaultValuesCT[i], false);
+			if(i != WEAPON_DEFUSER 	&& 	Function_GetRestrictValue(CS_TEAM_T, 	i) 	!= defaultValuesT[i] 	&& 	!Function_IsWeaponInOverride(CS_TEAM_T, 	i))	Function_SetRestriction(i, CS_TEAM_T, 	defaultValuesT[i], 	false);
+			if(i != WEAPON_C4 		&& 	Function_GetRestrictValue(CS_TEAM_CT, 	i) 	!= defaultValuesCT[i] 	&& 	!Function_IsWeaponInOverride(CS_TEAM_CT, i))	Function_SetRestriction(i, CS_TEAM_CT, 	defaultValuesCT[i], 	false);
 		}
 	}
 }
