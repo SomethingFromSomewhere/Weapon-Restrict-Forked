@@ -39,7 +39,7 @@ enum {
 
 #define MAXWEAPONGROUPS 7
 
-#define MAX_WEAPONS 74
+#define MAX_WEAPONS 62
 
 enum {
 	WEAPON_NONE,
