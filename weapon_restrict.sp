@@ -29,7 +29,7 @@ public Plugin myinfo =
 {
 	name 		= 		"Weapon Restrict [FORK]",
 	author 		= 		"Someone & Dr!fter & T1MOX4",
-	version 	= 		"3.2.1 D",
+	version 	= 		"3.2.1 E",
 	url 		= 		"http://hlmod.ru/"
 };
 

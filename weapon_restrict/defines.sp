@@ -97,7 +97,6 @@ enum {
 	WEAPON_INCGRENADE,
 	WEAPON_DEFUSER,
 	WEAPON_HEAVYASSAULTSUIT,
-	WEAPON_CUTTERS = 56,
 	WEAPON_HEALTHSHOT = 57,
 	WEAPON_KNIFE_T = 59,
 	WEAPON_M4A1_SILENCER = 60,
@@ -105,17 +104,6 @@ enum {
 	WEAPON_CZ75A = 63,
 	WEAPON_REVOLVER = 64,
 	WEAPON_TAGGRENADE = 68,
-	WEAPON_MAX_WEAPONS_NO_KNIFES,
-	WEAPON_BAYONET = 500,
-	WEAPON_KNIFE_FLIP = 505,
-	WEAPON_KNIFE_GUT = 506,
-	WEAPON_KNIFE_KARAMBIT = 507,
-	WEAPON_KNIFE_M9_BAYONET = 508,
-	WEAPON_KNIFE_TATICAL = 509,
-	WEAPON_KNIFE_FALCHION = 512,
-	WEAPON_KNIFE_SURVIVAL_BOWIE = 514,
-	WEAPON_KNIFE_BUTTERFLY = 515,
-	WEAPON_KNIFE_PUSH = 516,
 };
 
 
@@ -134,11 +122,8 @@ public const char weaponNames[][] =
 	"mp9",				"nova",			"p250",				"scar20", 
 	"sg556",			"ssg08",		"knifegg",			"molotov",
 	"decoy",			"incgrenade",	"defuser",			"heavyassaultsuit",
-	"cutters",			"healthshot",	"knife_t",			"m4a1_silencer",
-	"usp_silencer",		"cz75a",		"revolver",			"tagrenade",
-	"bayonet",			"flip",			"gut",				"karambit",
-	"m9_bayonet",		"tactical",		"falchion",			"bowie",
-	"butterfly",		"push",			"nvg"
+	"healthshot",		"knife_t",		"m4a1_silencer",
+	"usp_silencer",		"cz75a",		"revolver",			"tagrenade"
 };
 
 public const int weaponGroups[] = 
@@ -156,11 +141,8 @@ public const int weaponGroups[] =
 	WeaponTypeSMG,				WeaponTypeShotgun,			WeaponTypePistol,			WeaponTypeSniper,
 	WeaponTypeRifle,			WeaponTypeSniper,			WeaponTypeKnife,			WeaponTypeGrenade,
 	WeaponTypeGrenade,			WeaponTypeGrenade,			WeaponTypeOther,			WeaponTypeArmor,
-	WeaponTypeOther,			WeaponTypeOther,			WeaponTypeKnife,			WeaponTypeRifle,
-	WeaponTypePistol,			WeaponTypePistol,			WeaponTypePistol,			WeaponTypeGrenade,
-	WeaponTypeKnife,			WeaponTypeKnife,			WeaponTypeKnife,			WeaponTypeKnife,
-	WeaponTypeKnife,			WeaponTypeKnife,			WeaponTypeKnife,			WeaponTypeKnife,
-	WeaponTypeKnife,			WeaponTypeKnife,			WeaponTypeOther
+	WeaponTypeOther,			WeaponTypeKnife,			WeaponTypeRifle,
+	WeaponTypePistol,			WeaponTypePistol,			WeaponTypePistol,			WeaponTypeGrenade
 };
 
 public const int weaponSlots[] =
@@ -178,11 +160,8 @@ public const int weaponSlots[] =
 	SlotPrimmary,	SlotPrimmary,	SlotPistol,		SlotPrimmary,
 	SlotPrimmary,	SlotPrimmary,	SlotKnife,		SlotGrenade,
 	SlotGrenade,	SlotGrenade,	SlotNone,		SlotNone,
-	SlotNone,		SlotC4,			SlotKnife,		SlotPrimmary,
-	SlotPistol,		SlotPistol,		SlotPistol,		SlotGrenade,
-	SlotKnife,		SlotKnife,		SlotKnife,		SlotKnife,
-	SlotKnife,		SlotKnife,		SlotKnife,		SlotKnife,
-	SlotKnife,		SlotKnife,		SlotNone
+	SlotC4,			SlotKnife,		SlotPrimmary,
+	SlotPistol,		SlotPistol,		SlotPistol,		SlotGrenade
 };
 
 public const int BuyTeams[] = 
@@ -200,38 +179,31 @@ public const int BuyTeams[] =
 	CT_TEAM,		BOTH_TEAMS,		BOTH_TEAMS,		CT_TEAM,
 	TERROR_TEAM,	BOTH_TEAMS,		BOTH_TEAMS,		TERROR_TEAM,
 	BOTH_TEAMS,		CT_TEAM,		CT_TEAM,		BOTH_TEAMS,
-	CT_TEAM,		BOTH_TEAMS,		TERROR_TEAM,	CT_TEAM,
-	CT_TEAM,		BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS,
-	BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS,
-	BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS,
-	BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS
+	BOTH_TEAMS,		TERROR_TEAM,	CT_TEAM,
+	CT_TEAM,		BOTH_TEAMS,		BOTH_TEAMS,		BOTH_TEAMS
 };
 
 public const int AllowedGame[] = 
 {
-	-1,				2,				1,				2,
-	1,				1,				1,				1,
-	1,				1,				1,				1,
-	1,				2,				2,				1,
-	2,				1,				2,				1,
-	2,				1,				2,				1,
-	1,				1,				2,				1,
-	1,				1,				-1,				1,
+	-1,		2,		1,		2,
+	1,		1,		1,		1,
+	1,		1,		1,		1,
+	1,		2,		2,		1,
+	2,		1,		2,		1,
+	2,		1,		2,		1,
+	1,		1,		2,		1,
+	1,		1,		-1,		1,
 	
 	//тут мог напортачить
-	1,				1,				1,				1,				3,				3,
-	3,				3,				3,				3,
-	3,				3,				3,				3,
-	3,				3,				-1,				3,
-	3,				3,				3,				3,
+	1,		1,		1,		1,		3,		3,
+	3,		3,		3,		3,
+	3,		3,		3,		3,
+	3,		3,		-1,		3,
+	3,		3,		3,		3,
 	
 	//тут тоже мог напортачить
-	3,				3,				3,				3,
-	3,				3,				3,				3,
-	3,				3,				3,				3,
-	3,				3,				3,				3,
-	
-	3,				3,				3, 				2
+	3,		3,		3,		3,
+	3,		3,		3,		3,		3
 };
 
 public const char g_WeaponGroupNames[][WEAPONARRAYSIZE] = {"pistols", "smgs", "shotguns", "rifles", "snipers", "grenades", "armor"};
