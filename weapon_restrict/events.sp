@@ -82,7 +82,7 @@ public Action CS_OnBuyCommand(int iClient, const char[] weapon)
 	iTeam = GetClientTeam(iClient), iID = Function_GetWeaponIDExtended(weapon);
 	
 	if(iID == WEAPON_NONE || iID == WEAPON_C4 || iID == WEAPON_SHIELD)		return Plugin_Continue;
-	LogError("WID: %i | Allowed Teams: %i | Team: %i", iID, BuyTeams[iID], iTeam);
+
 	if(BuyTeams[iID] != 0 && iTeam != BuyTeams[iID])						return Plugin_Continue;
 	
 	if(!Function_CanBuyWeapon(iClient, iTeam, iID))
