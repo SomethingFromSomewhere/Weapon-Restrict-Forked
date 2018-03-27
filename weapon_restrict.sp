@@ -28,8 +28,8 @@ public const char ADMINCOMMANDTAG[] = " \x01[\x04SM\x01]\x04";	// Вынести
 public Plugin myinfo = 
 {
 	name 		= 		"Weapon Restrict [FORK]",
-	author 		= 		"Someone & Dr!fter & T1MOX4",
-	version 	= 		"3.2.1 E",
+	author 		= 		"Someone & T1MOX4 & Dr!fter",
+	version 	= 		"3.2.2 F",
 	url 		= 		"http://hlmod.ru/"
 };
 
