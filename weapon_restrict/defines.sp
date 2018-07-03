@@ -223,7 +223,7 @@ int 	g_iMenuAmount[MAXPLAYERS+1], 			g_iWeaponSlected[MAXPLAYERS+1], 			g_iGroup
 	defaultValuesT[MAX_WEAPONS],  			iLastVal = -1, 
 	iLastIndex = 0, 						perPlayer[MAX_WEAPONS][MAXPLAYERS+1],	g_iMyWeaponsMax = 31, 
 	HEGRENADE_AMMO = 11, 					FLASH_AMMO = 12, 						SMOKE_AMMO = 13, 
-	INC_AMMO = 16, 							DECOY_AMMO = 17;
+	INC_AMMO = 16, 							DECOY_AMMO = 17,						TAGRENADE_AMMO = 22;
 	
 int currentID = WEAPON_NONE;
 	
