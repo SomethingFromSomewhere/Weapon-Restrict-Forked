@@ -1,6 +1,6 @@
 Это измененная версия известного многим *Weapon Restrict*.
 
-## [Версия для SM 1.9](/SomethingFromSomewhere/Weapon-Restrict-Forked/tree/new/)
+## [Версия для SM 1.9](/tree/new/)
 
 
 ### Главные изменения:
