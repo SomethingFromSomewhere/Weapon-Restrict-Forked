@@ -1,0 +1,572 @@
+"Phrases"
+{
+	"deagle"
+	{
+		"en"		"Desert Eagle"
+	}
+	
+	"glock"
+	{
+		"en"		"Glock"
+	}
+	
+	"usp"
+	{
+		"en"		"USP"
+	}
+	
+	"p228"
+	{
+		"en"		"P228"
+	}
+	
+	"elite"
+	{
+		"en"		"Dual Elites"
+	}
+	
+	"fiveseven"
+	{
+		"en"		"Five Seven"
+	}
+	
+	"m4a1"
+	{
+		"en"		"M4A1 / M4A1-S"
+	}
+	
+	"ak47"
+	{
+		"en"		"AK-47"
+	}
+	
+	"aug"
+	{
+		"en"		"AUG"
+	}
+	
+	"sg552"
+	{
+		"en"		"SG552"
+	}
+	
+	"galil"
+	{
+		"en"		"Galil"
+	}
+	
+	"famas"
+	{
+		"en"		"Famas"
+	}
+	
+	"scout"
+	{
+		"en"		"Scout"
+	}
+	
+	"sg550"
+	{
+		"en"		"SG550"
+	}
+	
+	"m249"
+	{
+		"en"		"M249"
+	}
+	
+	"g3sg1"
+	{
+		"en"		"G3SG1"
+	}
+	
+	"ump45"
+	{
+		"en"		"UMP 45"
+	}
+	
+	"mp5navy"
+	{
+		"en"		"MP5 Navy"
+	}
+	
+	"m3"
+	{
+		"en"		"M3"
+	}
+	
+	"xm1014"
+	{
+		"en"		"XM1014"
+	}
+	
+	"tmp"
+	{
+		"en"		"TMP"
+	}
+	
+	"mac10"
+	{
+		"en"		"Mac 10"
+	}
+	
+	"p90"
+	{
+		"en"		"P90"
+	}
+	
+	"awp"
+	{
+		"en"		"AWP"
+	}
+	
+	"smokegrenade"
+	{
+		"en"		"Smoke Grenade"
+		"ru"		"Дымовая граната"
+	}
+	
+	"hegrenade"
+	{
+		"en"		"HE Grenade"
+		"ru"		"Осколочная граната"
+	}
+	
+	"flashbang"
+	{
+		"en"		"Flashbang"
+		"ru"		"Светошумовая граната"
+	}
+	
+	"c4"
+	{
+		"en"		"C4"
+	}
+	
+	"defuser"
+	{
+		"en"		"Defuse Kit"
+		"ru"		"Набор обезвреживания"
+	}
+	
+	"knife"
+	{
+		"en"		"Knife"
+		"ru"		"Нож"
+	}
+	
+	"kevlar"
+	{
+		"en"		"Kevlar"
+		"ru"		"Бронежилет"
+	}
+	
+	"assaultsuit"
+	{
+		"en"		"Vest and Helmet"
+		"ru"		"Бронежилет и шлем"
+	}
+	
+	"nvgs"
+	{
+		"en"		"Nightvision"
+		"ru"		"Очки ночного видения"
+	}
+	
+	"galilar"
+	{
+		"en"		"Galil AR"
+	}
+	
+	"bizon"
+	{
+		"en"		"Bizon"
+		"ru"		"Бизон"
+	}
+	
+	"mag7"
+	{
+		"en"		"Mag-7"
+	}
+	
+	"negev"
+	{
+		"en"		"Negev"
+	}
+	
+	"sawedoff"
+	{
+		"en"		"Sawedoff"
+	}
+	
+	"tec9"
+	{
+		"en"		"Tec-9"
+	}
+	
+	"taser"
+	{
+		"en"		"Taser"
+		"ru"		"Тазер"
+	}
+	
+	"hkp2000"
+	{
+		"en"		"HKP2000 / USP-S"
+	}
+	
+	"mp7"
+	{
+		"en"		"MP7"
+	}
+	
+	"mp9"
+	{
+		"en"		"MP9"
+	}
+	
+	"nova"
+	{
+		"en"		"Nova"
+	}
+	
+	"p250"
+	{
+		"en"		"P250"
+	}
+	
+	"scar17"
+	{
+		"en"		"Scar 17"
+	}
+	
+	"scar20"
+	{
+		"en"		"Scar 20"
+	}
+	
+	"sg556"
+	{
+		"en"		"SG556"
+	}
+	
+	"ssg08"
+	{
+		"en"		"SSG08"
+	}
+	
+	"knifegg"
+	{
+		"en"		"Gungame Knife"
+		"ru"		"Золотой нож"
+	}
+	
+	"molotov"
+	{
+		"en"		"Molotov"
+		"ru"		"Молотов"
+	}
+	
+	"decoy"
+	{
+		"en"		"Decoy Grenade"
+		"ru"		"Ложная граната"
+	}
+	
+	"incgrenade"
+	{
+		"en"		"Incendiary Grenade"
+		"ru"		"Зажигательная граната"
+	}
+	
+	"heavyassaultsuit"
+	{
+		"en"		"Heavy Assault Suit"
+		"ru"		"Тяжолоя* броня :)"
+	}
+	"healthshot"
+	{
+		"en"		"Medi-Shot"
+		"ru"		"Мед. Шприц"
+	}
+	"knife_t"
+	{
+		"en"		"Terrorist Knife"
+		"ru"		"Нож Tерорриста"
+	}
+	"m4a1_silencer"
+	{
+		"en"		"M4A1-S"
+	}
+	"usp_silencer"
+	{
+		"en"		"USP-S"
+	}
+	"cz75a"
+	{
+		"en"		"CZ75-Auto"
+	}
+	"revolver"
+	{
+		"en"		"R8 Revolver"
+		"ru"		"R8 Револьвер"
+
+	}
+	"taggrenade"
+	{
+		"en"		"Tactical Awareness Grenade"
+		"ru"		"Тактическая Маркерующая Граната"
+	}
+	
+	"pistols"
+	{
+		"en"		"Pistols"
+		"ru"		"Пистолеты"
+	}
+	
+	"smgs"
+	{
+		"en"		"Submachine Guns"
+		"ru"		"Пистолеты-пулеметы"
+	}	
+	
+	"shotguns"
+	{
+		"en"		"Shotguns"
+		"ru"		"Дробовики"
+	}
+	
+	"rifles"
+	{
+		"en"		"Rifles"
+		"ru"		"Винтовки"
+	}
+	
+	"snipers"
+	{
+		"en"		"Snipers"
+		"ru"		"Снайперские винтовки"
+	}
+	
+	"grenades"
+	{
+		"en"		"Grenades"
+		"ru"		"Гранаты"
+	}
+	
+	"armor"
+	{
+		"en"		"All Armor"
+		"ru"		"Вся броня"
+	}
+	
+	"AllWeapons"
+	{
+		"en"		"All Weapons"
+		"ru"		"Все оружие"
+	}
+	
+	"IsRestrictedBuyT"
+	{
+		"#format"	"{1:i}"
+		"en"		"is currently restricted to {1} for Terrorists and cannot be bought."
+		"ru"		"запрещен в количестве {1} для Террористов и не может быть куплен."
+	}
+	
+	"IsRestrictedBuyCT"
+	{
+		"#format"	"{1:i}"
+		"en"		"is currently restricted to {1} for Counter-Terrorists and cannot be bought."	
+		"ru"		"запрещен в количестве {1} для Контр-Террористов и не может быть куплен."
+	}
+	
+	"IsRestrictedPickupT"
+	{
+		"#format"	"{1:i}"
+		"en"		"is currently restricted to {1} for Terrorists and cannot be picked up."	
+		"ru"		"запрещен в количестве {1} для Террористов и не может быть подобран."
+	}
+	
+	"IsRestrictedPickupCT"
+	{
+		"#format"	"{1:i}"
+		"en"		"is currently restricted to {1} for Counter-Terrorists and cannot be picked up."
+		"ru"		"запрещен в количестве {1} для Контр-Террористов и не может быть подобран."	
+	}
+
+	"Refunded"
+	{
+		"#format"	"{1:i}"
+		"en"		"You have been refunded ${1} for"
+		"ru"		"Вам возмещено ${1} за"
+	}
+	
+	"RemovedRestricted"
+	{
+		"en"		"Removed all restricted items."
+		"ru"		"Удалены все запрещенные предметы."
+	}
+	
+	"RestrictedAll"
+	{
+		"en"		"Restricted all weapons."
+		"ru"		"Запрещено все оружие."
+	}
+	
+	"UnrestrictedAll"
+	{
+		"en"		"Unrestricted all weapons."
+		"ru"		"Разрешено все оружие."
+	}
+	
+	"InvalidWeapon"
+	{
+		"en"		"Weapon/group is invalid!"
+		"ru"		"Неверная группа или оружие!"
+	}
+	
+	"RestrictedCmd"
+	{
+		"en"		"Restricted"
+		"ru"		"Запрещено"
+	}
+	
+	"UnrestrictedCmd"
+	{
+		"en"		"Unrestricted"
+		"ru"		"Разрешено"
+	}
+	
+	"ForCT"
+	{
+		"en"		"for Counter-Terrorists."
+		"ru"		"для Контр-Террористов."
+	}
+	
+	"ForT"
+	{
+		"en"		"for Terrorists."
+		"ru"		"для Террористов"
+	}
+	
+	"ToAmount"
+	{
+		"#format"	"{1:i}"
+		"en"		"to {1}"
+		"ru"		"в количестве {1}"
+	}
+	
+	"RestrictReply"
+	{
+		"en"		"sm_restrict <weapon|all|group> <amount> <both|ct|t>"
+		"ru"		"sm_restrict <оружие|all|группа> <кол-во> <both|ct|t>"
+	}
+	
+	"InvalidAmount"
+	{
+		"en"		"Invalid amount."
+		"ru"		"Неправильное количество."
+	}
+	
+	"InvalidTeam"
+	{
+		"en"		"Invalid team."
+		"ru"		"Нерпавильная команда."
+	}
+	
+	"UnrestrictReply"
+	{
+		"en"		"sm_unrestrict <weapon|all|group> <both|ct|t>"
+		"ru"		"sm_unrestrict <оружие|all|группа> <кол-во> <both|ct|t>"
+	}
+
+	
+	"ReloadedRestricitions"
+	{
+		"en"		"Reloaded weapon restrictions."
+		"ru"		"Запреты оружий были перезагружены."
+	}
+
+	"RestrictMenuMainTitle"
+	{
+		"en"		"Weapon Restrict"
+		"ru"		"Запрет оружия:"
+	}
+	
+	"RestrictMenuMainOption"
+	{
+		"en"		"Weapon restrict"
+		"ru"		"Запрет оружия"
+	}
+	
+	"RestrictWeaponsOption"
+	{
+		"en"		"Restrict Weapons"
+		"ru"		"Запретить оружие"
+	}
+	
+	"UnrestrictWeaponsOption"
+	{
+		"en"		"Unrestrict Weapons"
+		"ru"		"Разрешить оружие"
+	}
+	
+	"RestrictionTypeMenuTitle"
+	{
+		"en"		"Select Type"
+		"ru"		"Выберите тип:"
+	}
+	
+	"TypeWeaponRestrict"
+	{
+		"en"		"By Weapon"
+		"ru"		"По оружию"
+	}
+	
+	"TypeGroupRestrict"
+	{
+		"en"		"By Group"
+		"ru"		"По группе"
+	}
+	
+	"RestrictMenuTitle"
+	{
+		"en"		"Select Item To Restrict"
+		"ru"		"Выберите предмет для запрета"
+	}
+	
+	"UnrestrictMenuTitle"
+	{
+		"en"		"Select Item To Unrestrict"
+		"ru"		"Выберите предмет для разрешения"
+	}
+	
+	"AmountMenuTitle"
+	{
+		"en"		"Select Amount"
+		"ru"		"Выберите количество"
+	}
+	
+	"SelectTeamMenuTitle"
+	{
+		"en"		"Select Team"
+		"ru"		"Выберите команду"
+	}
+	
+	"CounterTerrorists"
+	{
+		"en"		"Counter-Terrorists"
+		"ru"		"Контр-Террористы"
+	}
+	
+	"Terrorists"
+	{
+		"en"		"Terrorists"
+		"ru"		"Террористы"
+	}
+	"Allteams"
+	{
+		"en"		"Both Teams"
+		"ru"		"Обе команды"
+	}
+}
