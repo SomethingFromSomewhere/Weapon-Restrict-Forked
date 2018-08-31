@@ -185,7 +185,7 @@ void Function_RemoveRandom(int count, int iTeam, int iID)
 			{
 				ammoindex = DECOY_AMMO;
 			}
-			case WEAPON_TAGRENADE:
+			case WEAPON_TAGGRENADE:
 			{
 				ammoindex = TAGRENADE_AMMO;
 			}
@@ -240,7 +240,7 @@ int Function_GetGrenadeCount(int iClient, int iID)
 		case WEAPON_SMOKEGRENADE: iIndex = SMOKE_AMMO;
 		case WEAPON_INCGRENADE, WEAPON_MOLOTOV: iIndex = INC_AMMO;
 		case WEAPON_DECOY: iIndex = DECOY_AMMO;
-		case WEAPON_TAGRENADE: iIndex = TAGRENADE_AMMO;
+		case WEAPON_TAGGRENADE: iIndex = TAGRENADE_AMMO;
 		default: {
 			LogError("Weapon ID %d is not a grenade.", iID);
 			return 0;
