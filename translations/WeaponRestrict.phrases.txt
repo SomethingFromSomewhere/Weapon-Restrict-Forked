@@ -124,18 +124,21 @@
 	{
 		"en"		"Smoke Grenade"
 		"ru"		"Дымовая граната"
+		"ua"		"Димова граната"
 	}
 	
 	"hegrenade"
 	{
 		"en"		"HE Grenade"
 		"ru"		"Осколочная граната"
+		"ua"		"Осколкова граната"
 	}
 	
 	"flashbang"
 	{
 		"en"		"Flashbang"
 		"ru"		"Светошумовая граната"
+		"ua"		"Світлошумова граната"
 	}
 	
 	"c4"
@@ -147,30 +150,35 @@
 	{
 		"en"		"Defuse Kit"
 		"ru"		"Набор обезвреживания"
+		"ua"		"Набір знешкодження"
 	}
 	
 	"knife"
 	{
 		"en"		"Knife"
 		"ru"		"Нож"
+		"ua"		"Ніж"
 	}
 	
 	"kevlar"
 	{
 		"en"		"Kevlar"
 		"ru"		"Бронежилет"
+		"ua"		"Бронежилет"
 	}
 	
 	"assaultsuit"
 	{
 		"en"		"Vest and Helmet"
 		"ru"		"Бронежилет и шлем"
+		"ua"		"Бронежилет і шолом" // Шалом! :D
 	}
 	
 	"nvgs"
 	{
 		"en"		"Nightvision"
 		"ru"		"Очки ночного видения"
+		"ua"		"Окуляри нічного бачення"
 	}
 	
 	"galilar"
@@ -182,6 +190,7 @@
 	{
 		"en"		"Bizon"
 		"ru"		"Бизон"
+		"ua"		"Бізон"
 	}
 	
 	"mag7"
@@ -207,7 +216,8 @@
 	"taser"
 	{
 		"en"		"Taser"
-		"ru"		"Тазер"
+		"ru"		"Электрошокер"
+		"ua"		"Электрошокер" 
 	}
 	
 	"hkp2000"
@@ -259,6 +269,7 @@
 	{
 		"en"		"Gungame Knife"
 		"ru"		"Золотой нож"
+		"ua"		"Золотий ніж"
 	}
 	
 	"molotov"
@@ -271,60 +282,114 @@
 	{
 		"en"		"Decoy Grenade"
 		"ru"		"Ложная граната"
+		"ua"		"Не справжня граната"
 	}
 	
 	"incgrenade"
 	{
 		"en"		"Incendiary Grenade"
 		"ru"		"Зажигательная граната"
+		"ua"		"Запальна граната"
+	}
+	
+	"heavyassaultsuit"
+	{
+		"en"		"Heavy Assault Suit"
+		"ru"		"Тяжолоя* броня"
+		"ua"		"Тяжка броня"
+	}
+	"healthshot"
+	{
+		"en"		"Medi-Shot"
+		"ru"		"Мед. Шприц"
+		"ua"		"Мед. Шприц"
+	}
+	"knife_t"
+	{
+		"en"		"Terrorist Knife"
+		"ru"		"Нож Tерорриста"
+		"ua"		"Ніж Tерориста"
+	}
+	"m4a1_silencer"
+	{
+		"en"		"M4A1-S"
+	}
+	"usp_silencer"
+	{
+		"en"		"USP-S"
+	}
+	"cz75a"
+	{
+		"en"		"CZ75-Auto"
+	}
+	"revolver"
+	{
+		"en"		"R8 Revolver"
+		"ru"		"R8 Револьвер"
+		"ua"		"R8 Револьвер"
+
+	}
+	"taggrenade"
+	{
+		"en"		"Tactical Awareness Grenade"
+		"ru"		"Тактическая Маркерующая Граната"
+		"ua"		"Тактична Маркеруюча Граната"
 	}
 	
 	"pistols"
 	{
 		"en"		"Pistols"
 		"ru"		"Пистолеты"
+		"ua"		"Пістолети"
 	}
 	
 	"smgs"
 	{
 		"en"		"Submachine Guns"
 		"ru"		"Пистолеты-пулеметы"
+		"ua"		"Пістолети-кулемети"
 	}	
 	
 	"shotguns"
 	{
 		"en"		"Shotguns"
 		"ru"		"Дробовики"
+		"ua"		"Дробовики"
 	}
 	
 	"rifles"
 	{
 		"en"		"Rifles"
 		"ru"		"Винтовки"
+		"ua"		"Гвинтівки"
 	}
 	
 	"snipers"
 	{
 		"en"		"Snipers"
 		"ru"		"Снайперские винтовки"
+		"ua"		"Снайперські гвинтівки"
 	}
 	
 	"grenades"
 	{
 		"en"		"Grenades"
 		"ru"		"Гранаты"
+		"ua"		"Гранати"
 	}
 	
 	"armor"
 	{
 		"en"		"All Armor"
 		"ru"		"Вся броня"
+		"ua"		"Уся броня"
 	}
 	
 	"AllWeapons"
 	{
 		"en"		"All Weapons"
 		"ru"		"Все оружие"
+		"ua"		"Уся зброя"
 	}
 	
 	"IsRestrictedBuyT"
@@ -332,6 +397,7 @@
 		"#format"	"{1:i}"
 		"en"		"is currently restricted to {1} for Terrorists and cannot be bought."
 		"ru"		"запрещен в количестве {1} для Террористов и не может быть куплен."
+		"ua"		"заборонено в кількості {1} для Терористів й не може бути куплений."
 	}
 	
 	"IsRestrictedBuyCT"
@@ -339,6 +405,7 @@
 		"#format"	"{1:i}"
 		"en"		"is currently restricted to {1} for Counter-Terrorists and cannot be bought."	
 		"ru"		"запрещен в количестве {1} для Контр-Террористов и не может быть куплен."
+		"ua"		"заборонено в кількості {1} для Контр-Терористів й не може бути куплений."
 	}
 	
 	"IsRestrictedPickupT"
@@ -346,6 +413,7 @@
 		"#format"	"{1:i}"
 		"en"		"is currently restricted to {1} for Terrorists and cannot be picked up."	
 		"ru"		"запрещен в количестве {1} для Террористов и не может быть подобран."
+		"ua"		"заборонено в кількості {1} для Терористів й не може бути піднятий."
 	}
 	
 	"IsRestrictedPickupCT"
@@ -353,6 +421,7 @@
 		"#format"	"{1:i}"
 		"en"		"is currently restricted to {1} for Counter-Terrorists and cannot be picked up."
 		"ru"		"запрещен в количестве {1} для Контр-Террористов и не может быть подобран."	
+		"ua"		"заборонено в кількості {1} для Контр-Терористів й не може бути піднятий."	
 	}
 
 	"Refunded"
@@ -360,54 +429,63 @@
 		"#format"	"{1:i}"
 		"en"		"You have been refunded ${1} for"
 		"ru"		"Вам возмещено ${1} за"
+		"ua"		"Вам повернено ${1} за"
 	}
 	
 	"RemovedRestricted"
 	{
 		"en"		"Removed all restricted items."
 		"ru"		"Удалены все запрещенные предметы."
+		"ua"		"Видалені всі заборонені предмети."
 	}
 	
 	"RestrictedAll"
 	{
 		"en"		"Restricted all weapons."
 		"ru"		"Запрещено все оружие."
+		"ua"		"Заборонена вся зброя."
 	}
 	
 	"UnrestrictedAll"
 	{
 		"en"		"Unrestricted all weapons."
 		"ru"		"Разрешено все оружие."
+		"ua"		"Дозволена вся зброя."
 	}
 	
 	"InvalidWeapon"
 	{
 		"en"		"Weapon/group is invalid!"
 		"ru"		"Неверная группа или оружие!"
+		"ua"		"Не правильна група або зброя!"
 	}
 	
 	"RestrictedCmd"
 	{
 		"en"		"Restricted"
 		"ru"		"Запрещено"
+		"ua"		"Заборонено"
 	}
 	
 	"UnrestrictedCmd"
 	{
 		"en"		"Unrestricted"
 		"ru"		"Разрешено"
+		"ua"		"Дозволено"
 	}
 	
 	"ForCT"
 	{
 		"en"		"for Counter-Terrorists."
 		"ru"		"для Контр-Террористов."
+		"ua"		"для Контр-Терористів."
 	}
 	
 	"ForT"
 	{
 		"en"		"for Terrorists."
 		"ru"		"для Террористов"
+		"ua"		"для Терористів"
 	}
 	
 	"ToAmount"
@@ -415,30 +493,35 @@
 		"#format"	"{1:i}"
 		"en"		"to {1}"
 		"ru"		"в количестве {1}"
+		"ua"		"у кількості {1}"
 	}
 	
 	"RestrictReply"
 	{
 		"en"		"sm_restrict <weapon|all|group> <amount> <both|ct|t>"
 		"ru"		"sm_restrict <оружие|all|группа> <кол-во> <both|ct|t>"
+		"ua"		"sm_restrict <зброя|all|група> <кол-во> <both|ct|t>"
 	}
 	
 	"InvalidAmount"
 	{
 		"en"		"Invalid amount."
 		"ru"		"Неправильное количество."
+		"ua"		"Не вірна кількість."
 	}
 	
 	"InvalidTeam"
 	{
 		"en"		"Invalid team."
-		"ru"		"Нерпавильная команда."
+		"ru"		"Неправильная команда."
+		"ua"		"Не вірна команда."
 	}
 	
 	"UnrestrictReply"
 	{
 		"en"		"sm_unrestrict <weapon|all|group> <both|ct|t>"
 		"ru"		"sm_unrestrict <оружие|all|группа> <кол-во> <both|ct|t>"
+		"ua"		"sm_unrestrict <зброя|all|група> <кол-во> <both|ct|t>"
 	}
 
 	
@@ -446,88 +529,103 @@
 	{
 		"en"		"Reloaded weapon restrictions."
 		"ru"		"Запреты оружий были перезагружены."
+		"ua"		"Заборони зброї були перезагружені."
 	}
 
 	"RestrictMenuMainTitle"
 	{
 		"en"		"Weapon Restrict"
 		"ru"		"Запрет оружия:"
+		"ua"		"Заборона зброї:"
 	}
 	
 	"RestrictMenuMainOption"
 	{
 		"en"		"Weapon restrict"
 		"ru"		"Запрет оружия"
+		"ua"		"Заборона зброї"
 	}
 	
 	"RestrictWeaponsOption"
 	{
 		"en"		"Restrict Weapons"
 		"ru"		"Запретить оружие"
+		"ua"		"Заборонити зброю"
 	}
 	
 	"UnrestrictWeaponsOption"
 	{
 		"en"		"Unrestrict Weapons"
 		"ru"		"Разрешить оружие"
+		"ua"		"Дозволити зброю"
 	}
 	
 	"RestrictionTypeMenuTitle"
 	{
 		"en"		"Select Type"
 		"ru"		"Выберите тип:"
+		"ua"		"Оберіть тип:"
 	}
 	
 	"TypeWeaponRestrict"
 	{
 		"en"		"By Weapon"
 		"ru"		"По оружию"
+		"ua"		"По зброї"
 	}
 	
 	"TypeGroupRestrict"
 	{
 		"en"		"By Group"
 		"ru"		"По группе"
+		"ua"		"По групі"
 	}
 	
 	"RestrictMenuTitle"
 	{
 		"en"		"Select Item To Restrict"
 		"ru"		"Выберите предмет для запрета"
+		"ua"		"Оберіть предмет для заборони"
 	}
 	
 	"UnrestrictMenuTitle"
 	{
 		"en"		"Select Item To Unrestrict"
 		"ru"		"Выберите предмет для разрешения"
+		"ua"		"Оберіть предмет для дозволення"
 	}
 	
 	"AmountMenuTitle"
 	{
 		"en"		"Select Amount"
 		"ru"		"Выберите количество"
+		"ua"		"Оберіть кількість"
 	}
 	
 	"SelectTeamMenuTitle"
 	{
 		"en"		"Select Team"
 		"ru"		"Выберите команду"
+		"ua"		"Оберіть команду"
 	}
 	
 	"CounterTerrorists"
 	{
 		"en"		"Counter-Terrorists"
 		"ru"		"Контр-Террористы"
+		"ua"		"Контр-Терористи"
 	}
 	
 	"Terrorists"
 	{
 		"en"		"Terrorists"
 		"ru"		"Террористы"
+		"ua"		"Терористи"
 	}
 	"Allteams"
 	{
 		"en"		"Both Teams"
 		"ru"		"Обе команды"
+		"ua"		"Обидві команди"
 	}
 }
