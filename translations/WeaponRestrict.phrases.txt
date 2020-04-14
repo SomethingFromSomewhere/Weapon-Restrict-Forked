@@ -7,7 +7,7 @@
 	
 	"glock"
 	{
-		"en"		"Glock"
+		"en"		"Glock-18"
 	}
 	
 	"usp"
@@ -27,7 +27,7 @@
 	
 	"fiveseven"
 	{
-		"en"		"Five Seven"
+		"en"		"Five-SeveN"
 	}
 	
 	"m4a1"
@@ -47,7 +47,7 @@
 	
 	"sg552"
 	{
-		"en"		"SG552"
+		"en"		"SG 552"
 	}
 	
 	"galil"
@@ -57,7 +57,7 @@
 	
 	"famas"
 	{
-		"en"		"Famas"
+		"en"		"FAMAS"
 	}
 	
 	"scout"
@@ -82,7 +82,7 @@
 	
 	"ump45"
 	{
-		"en"		"UMP 45"
+		"en"		"UMP-45"
 	}
 	
 	"mp5navy"
@@ -107,7 +107,7 @@
 	
 	"mac10"
 	{
-		"en"		"Mac 10"
+		"en"		"MAC-10"
 	}
 	
 	"p90"
@@ -123,6 +123,7 @@
 	"smokegrenade"
 	{
 		"en"		"Smoke Grenade"
+		"pt"		"Smoke Granada"
 		"ru"		"Дымовая граната"
 		"ua"		"Димова граната"
 	}
@@ -130,6 +131,7 @@
 	"hegrenade"
 	{
 		"en"		"HE Grenade"
+		"pt"		"HE Granada"
 		"ru"		"Осколочная граната"
 		"ua"		"Осколкова граната"
 	}
@@ -137,6 +139,7 @@
 	"flashbang"
 	{
 		"en"		"Flashbang"
+		"pt"		"Flashbang"
 		"ru"		"Светошумовая граната"
 		"ua"		"Світлошумова граната"
 	}
@@ -149,6 +152,7 @@
 	"defuser"
 	{
 		"en"		"Defuse Kit"
+		"pt"		"Defuse Kit"
 		"ru"		"Набор обезвреживания"
 		"ua"		"Набір знешкодження"
 	}
@@ -156,6 +160,7 @@
 	"knife"
 	{
 		"en"		"Knife"
+		"pt"		"Knife"
 		"ru"		"Нож"
 		"ua"		"Ніж"
 	}
@@ -169,7 +174,7 @@
 	
 	"assaultsuit"
 	{
-		"en"		"Vest and Helmet"
+		"en"		"Vest & Helmet"
 		"ru"		"Бронежилет и шлем"
 		"ua"		"Бронежилет і шолом" // Шалом! :D
 	}
@@ -188,14 +193,14 @@
 	
 	"bizon"
 	{
-		"en"		"Bizon"
+		"en"		"PP-Bizon"
 		"ru"		"Бизон"
 		"ua"		"Бізон"
 	}
 	
 	"mag7"
 	{
-		"en"		"Mag-7"
+		"en"		"MAG-7"
 	}
 	
 	"negev"
@@ -205,7 +210,7 @@
 	
 	"sawedoff"
 	{
-		"en"		"Sawedoff"
+		"en"		"Sawed-Off"
 	}
 	
 	"tec9"
@@ -216,6 +221,7 @@
 	"taser"
 	{
 		"en"		"Taser"
+		"pt"		"Zeus x27"
 		"ru"		"Электрошокер"
 		"ua"		"Электрошокер" 
 	}
@@ -247,22 +253,22 @@
 	
 	"scar17"
 	{
-		"en"		"Scar 17"
+		"en"		"SCAR-17"
 	}
 	
 	"scar20"
 	{
-		"en"		"Scar 20"
+		"en"		"SCAR-20"
 	}
 	
 	"sg556"
 	{
-		"en"		"SG556"
+		"en"		"SG 556"
 	}
 	
 	"ssg08"
 	{
-		"en"		"SSG08"
+		"en"		"SSG 08"
 	}
 	
 	"knifegg"
@@ -281,6 +287,7 @@
 	"decoy"
 	{
 		"en"		"Decoy Grenade"
+		"pt"		"Decoy Granada"
 		"ru"		"Ложная граната"
 		"ua"		"Не справжня граната"
 	}
@@ -288,6 +295,7 @@
 	"incgrenade"
 	{
 		"en"		"Incendiary Grenade"
+		"pt"		"Granada Incendiária"
 		"ru"		"Зажигательная граната"
 		"ua"		"Запальна граната"
 	}
@@ -304,31 +312,36 @@
 		"ru"		"Мед. Шприц"
 		"ua"		"Мед. Шприц"
 	}
+	
 	"knife_t"
 	{
 		"en"		"Terrorist Knife"
 		"ru"		"Нож Tерорриста"
 		"ua"		"Ніж Tерориста"
 	}
+	
 	"m4a1_silencer"
 	{
 		"en"		"M4A1-S"
 	}
+	
 	"usp_silencer"
 	{
 		"en"		"USP-S"
 	}
+	
 	"cz75a"
 	{
 		"en"		"CZ75-Auto"
 	}
+	
 	"revolver"
 	{
 		"en"		"R8 Revolver"
 		"ru"		"R8 Револьвер"
 		"ua"		"R8 Револьвер"
-
 	}
+	
 	"taggrenade"
 	{
 		"en"		"Tactical Awareness Grenade"
@@ -339,6 +352,7 @@
 	"pistols"
 	{
 		"en"		"Pistols"
+		"pt"		"Pistolas"
 		"ru"		"Пистолеты"
 		"ua"		"Пістолети"
 	}
@@ -374,6 +388,7 @@
 	"grenades"
 	{
 		"en"		"Grenades"
+		"pt"		"Granadas"
 		"ru"		"Гранаты"
 		"ua"		"Гранати"
 	}
@@ -423,7 +438,7 @@
 		"ru"		"запрещен в количестве {1} для Контр-Террористов и не может быть подобран."	
 		"ua"		"заборонено в кількості {1} для Контр-Терористів й не може бути піднятий."	
 	}
-
+	
 	"Refunded"
 	{
 		"#format"	"{1:i}"
@@ -455,7 +470,7 @@
 	
 	"InvalidWeapon"
 	{
-		"en"		"Weapon/group is invalid!"
+		"en"		"Weapon/Group is invalid!"
 		"ru"		"Неверная группа или оружие!"
 		"ua"		"Не правильна група або зброя!"
 	}
@@ -463,6 +478,7 @@
 	"RestrictedCmd"
 	{
 		"en"		"Restricted"
+		"pt"		"Restrita"
 		"ru"		"Запрещено"
 		"ua"		"Заборонено"
 	}
@@ -470,6 +486,7 @@
 	"UnrestrictedCmd"
 	{
 		"en"		"Unrestricted"
+		"pt"		"Irrestrita"
 		"ru"		"Разрешено"
 		"ua"		"Дозволено"
 	}
@@ -477,6 +494,7 @@
 	"ForCT"
 	{
 		"en"		"for Counter-Terrorists."
+		"pt"		"para Contra-Terroristas."
 		"ru"		"для Контр-Террористов."
 		"ua"		"для Контр-Терористів."
 	}
@@ -484,6 +502,7 @@
 	"ForT"
 	{
 		"en"		"for Terrorists."
+		"pt"		"para Terroristas."
 		"ru"		"для Террористов"
 		"ua"		"для Терористів"
 	}
@@ -492,6 +511,7 @@
 	{
 		"#format"	"{1:i}"
 		"en"		"to {1}"
+		"pt"		"para {1}"
 		"ru"		"в количестве {1}"
 		"ua"		"у кількості {1}"
 	}
@@ -499,6 +519,7 @@
 	"RestrictReply"
 	{
 		"en"		"sm_restrict <weapon|all|group> <amount> <both|ct|t>"
+		"pt"		"sm_restrict <weapon|all|group> <amount> <both|ct|t>"
 		"ru"		"sm_restrict <оружие|all|группа> <кол-во> <both|ct|t>"
 		"ua"		"sm_restrict <зброя|all|група> <кол-во> <both|ct|t>"
 	}
@@ -520,28 +541,31 @@
 	"UnrestrictReply"
 	{
 		"en"		"sm_unrestrict <weapon|all|group> <both|ct|t>"
+		"pt"		"sm_unrestrict <weapon|all|group> <both|ct|t>"
 		"ru"		"sm_unrestrict <оружие|all|группа> <кол-во> <both|ct|t>"
 		"ua"		"sm_unrestrict <зброя|all|група> <кол-во> <both|ct|t>"
 	}
-
 	
 	"ReloadedRestricitions"
 	{
 		"en"		"Reloaded weapon restrictions."
+		"pt"		"Restrições de armas recarregadas."
 		"ru"		"Запреты оружий были перезагружены."
 		"ua"		"Заборони зброї були перезагружені."
 	}
-
+	
 	"RestrictMenuMainTitle"
 	{
-		"en"		"Weapon Restrict"
+		"en"		"Weapon Restrict:"
+		"pt"		"Weapon Restrict:"
 		"ru"		"Запрет оружия:"
 		"ua"		"Заборона зброї:"
 	}
 	
 	"RestrictMenuMainOption"
 	{
-		"en"		"Weapon restrict"
+		"en"		"Weapon Restrict"
+		"pt"		"Weapon Restrict"
 		"ru"		"Запрет оружия"
 		"ua"		"Заборона зброї"
 	}
@@ -549,6 +573,7 @@
 	"RestrictWeaponsOption"
 	{
 		"en"		"Restrict Weapons"
+		"pt"		"Restringir Weapons"
 		"ru"		"Запретить оружие"
 		"ua"		"Заборонити зброю"
 	}
@@ -556,13 +581,15 @@
 	"UnrestrictWeaponsOption"
 	{
 		"en"		"Unrestrict Weapons"
+		"pt"		"Weapons Irrestritas"
 		"ru"		"Разрешить оружие"
 		"ua"		"Дозволити зброю"
 	}
 	
 	"RestrictionTypeMenuTitle"
 	{
-		"en"		"Select Type"
+		"en"		"Select Type:"
+		"pt"		"Selecionar Tipo:"
 		"ru"		"Выберите тип:"
 		"ua"		"Оберіть тип:"
 	}
@@ -570,6 +597,7 @@
 	"TypeWeaponRestrict"
 	{
 		"en"		"By Weapon"
+		"pt"		"Por Weapon"
 		"ru"		"По оружию"
 		"ua"		"По зброї"
 	}
@@ -577,6 +605,7 @@
 	"TypeGroupRestrict"
 	{
 		"en"		"By Group"
+		"pt"		"Por Grupo"
 		"ru"		"По группе"
 		"ua"		"По групі"
 	}
@@ -584,6 +613,7 @@
 	"RestrictMenuTitle"
 	{
 		"en"		"Select Item To Restrict"
+		"pt"		"Selecionar item para restringir"
 		"ru"		"Выберите предмет для запрета"
 		"ua"		"Оберіть предмет для заборони"
 	}
@@ -591,6 +621,7 @@
 	"UnrestrictMenuTitle"
 	{
 		"en"		"Select Item To Unrestrict"
+		"pt"		"Selecionar item a ser irrestrito"
 		"ru"		"Выберите предмет для разрешения"
 		"ua"		"Оберіть предмет для дозволення"
 	}
@@ -598,6 +629,7 @@
 	"AmountMenuTitle"
 	{
 		"en"		"Select Amount"
+		"pt"		"Selecionar Quantidade"
 		"ru"		"Выберите количество"
 		"ua"		"Оберіть кількість"
 	}
@@ -605,6 +637,7 @@
 	"SelectTeamMenuTitle"
 	{
 		"en"		"Select Team"
+		"pt"		"Selecionar Time"
 		"ru"		"Выберите команду"
 		"ua"		"Оберіть команду"
 	}
@@ -612,6 +645,7 @@
 	"CounterTerrorists"
 	{
 		"en"		"Counter-Terrorists"
+		"pt"		"Contra-Terroristas"
 		"ru"		"Контр-Террористы"
 		"ua"		"Контр-Терористи"
 	}
@@ -619,12 +653,14 @@
 	"Terrorists"
 	{
 		"en"		"Terrorists"
+		"pt"		"Terroristas"
 		"ru"		"Террористы"
 		"ua"		"Терористи"
 	}
 	"Allteams"
 	{
 		"en"		"Both Teams"
+		"pt"		"Both Teams"
 		"ru"		"Обе команды"
 		"ua"		"Обидві команди"
 	}
